@@ -4,6 +4,7 @@
   flex-direction: row;
   margin-bottom: 10px;
   border-bottom: .05rem solid gray;
+  padding-bottom: 10px;
 }
 
 .small-card__photo > img {
