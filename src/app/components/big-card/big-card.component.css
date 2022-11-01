@@ -1,6 +1,6 @@
 .container__big-card {
-  width: 500px;
-  height: 500px;
+  width: 550px;
+  height: 510px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -16,9 +16,18 @@
 
 .big-card__description > p {
   color: gray;
+  text-align: justify;
 }
+
+.container__big-card > a {
+  color: gray;
+  text-align: justify;
+  text-decoration: none;
+}
+
+
 
 .big-card__photo > img{
   width: 100%;
-  min-width: 500px;
+  min-width: 550px;
 }
