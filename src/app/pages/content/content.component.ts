@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {dataFake} from '../../data/dataFake'
 
 @Component({
   selector: 'app-content',
@@ -7,13 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  photoCover: string = 'https://blog.geekhunter.com.br/wp-content/uploads/2019/07/angular8-min-1.jpg'
-  contentTitle: string = 'Meu artigo'
-  contentDescription: string = 'Mussum Ipsum, cacilds vidis litro abertis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Paisis, filhis, espiritis santis. Quem num gosta di mé, boa gentis num é.Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. A ordem dos tratores não altera o pão duris.Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.Per aumento de cachacis, eu reclamis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi.'
+  photoCover: string = ''
+  contentTitle: string = ''
+  contentDescription: string = ''
+  private id:string | null= '0';
 
-  constructor() { }
+  constructor(
+    private route:ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(value => this.id = value.get('id'))
+
+    this.setValuesToComponent(this.id)
   }
 
+  setValuesToComponent(id: string | null): void{
+    const result = dataFake.filter(article => article.id == id)[0]
+
+    this.photoCover = result.photo;
+    this.contentTitle = result.title;
+    this.contentDescription = result.description;
+
+  }
 }
