@@ -1,7 +1,7 @@
 <div class="container__small-card">
   <div class="small-card__photo">
     <img
-      src="https://www.clariontech.com/hubfs/Blog-images/Angular-Features.jpg"
+      src="{{photoCover}} "
       alt=""
       width="250px"
       srcset=""
@@ -9,8 +9,9 @@
   </div>
   <div class="small-card__title">
     <h3>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer orci
-      massa, suscipit ut gravida sed
+      <a href="#">
+        {{cardTitle}}
+      </a>
     </h3>
   </div>
 </div>

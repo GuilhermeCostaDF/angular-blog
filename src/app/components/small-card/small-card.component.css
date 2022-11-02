@@ -17,3 +17,7 @@
   display: flex;
   align-items: center;
 }
+
+.small-card__title > h3 > a {
+  text-decoration: none;
+}
